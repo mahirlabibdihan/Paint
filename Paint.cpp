@@ -157,10 +157,7 @@ void iDraw(void)
         iFilledCircle(MouseX,MouseY,10);
         iSetColor(R,G,B);
         iPoint(MouseX,MouseY,Size+1);
-
     }
-
-
 }
 
 
@@ -233,9 +230,6 @@ void iMouse(int button, int state, int mx, int my)
     Erase=0;
     if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
     {
-        //place your codes here
-        //printf("x = %d, y= %d\n",mx,my);
-
         if(mx>=1590&&mx<=1845&&my>=5&&my<=25)
         {
             B=mx-1590;
@@ -315,7 +309,7 @@ void iMouse(int button, int state, int mx, int my)
 
                 if(Graph[mx][my].Show)
                 {
-                     History.push({-1,-1});
+                    History.push({-1,-1});
                     Graph[mx][my]={R,G,B,1};
 
                     History.push({mx,my});
@@ -480,7 +474,7 @@ void iKeyboard(unsigned char key)
                     History.pop();
                     if(History.empty()) break;
                 }
-                History.pop();
+                // History.pop();
                 break;
             }
             History.pop();
